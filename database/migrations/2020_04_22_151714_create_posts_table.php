@@ -20,7 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('author');
             $table->longText('description');
             $table->json('replies');
-            $table->timestamp('posted_at');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at');
         });
     }
 

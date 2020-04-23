@@ -8,7 +8,15 @@ class PostsController extends Controller
 {
     public function view_singular($id)
     {
-        return "You want to view ".$id;
+        $data = \App\Posts::where('id', $id)->first();
+        if($data['id']>0)
+        {
+            return view('post', ['data'=>$data]);
+        }
+        else
+        {
+            return 'not found';
+        }
     }
     public function view_all()
     {
