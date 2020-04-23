@@ -14,23 +14,38 @@ class UserController extends Controller
     {
         if($re->input('email')!==null)
         {
-            //process login
+            //process
             if(true)
             {
-                //start session
+                return 1;
             }
             else
             {
-                //redo login
+                return 0;
             }
         }
         else
         {
-            return 'return the form';
+            return view('login');
         }
     }
     public function signup(Request $re)
     {
-        return 'signup form';
+        if($re->input('email')!==null)
+        {
+            //process
+            if(true)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        else
+        {
+            return view('signup');
+        }
     }
 }

@@ -35,7 +35,7 @@ Route::post('/posts/update/{id}', 'PostsController@update_post');
 Route::get('/posts/delete/{id}', 'PostsController@delete_post');
 
 ##ACCOUNTS
-Route::get('/users/{id}', 'UserController@show_profile');
+Route::get('/users/show/{id}', 'UserController@show_profile');
 Route::get('/users/login', 'UserController@login');
 Route::get('/users/signup', 'UserController@signup');
 Route::post('/users/login', 'UserController@login');
