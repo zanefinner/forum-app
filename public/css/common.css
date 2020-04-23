@@ -1,0 +1,60 @@
+html, body{
+    margin: 0;
+    background-color: rgb(244, 244, 244);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav{
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(40,40,40);
+}
+.nav .left{
+    position: absolute;
+    top: 0;
+    left: 16px;
+    height: 44px;
+    width: auto;
+    line-height: 44px;
+    font-size: 1.3rem;
+}
+.nav .right a{
+    text-decoration: none;
+    color: white;
+}
+.nav .left a{
+    text-decoration: none;
+    color: white;
+}
+.nav .right {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    height: 44px;
+    width: auto;
+    line-height: 44px;
+    font-size: 1rem;
+}
+.nav .right a{
+    margin-left: 14px;
+}
+.container{
+    position: absolute;
+    margin-top: 80px;
+    left: 50%;
+    top: 0;
+    height: auto;
+    width: 800px;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid rgb(190,190,190);
+    border-radius: 13px;
+    padding: 40px;
+}
+.footer{
+    background-color: rgb(40,40,40);
+    text-align: center;
+    color: white;
+}
