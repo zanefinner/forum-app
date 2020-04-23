@@ -24,20 +24,19 @@ class PostsController extends Controller
     }
     public function show_post_view()
     {
-        return 'send back a template';
+        return view('new', [
+            'tags'=>[
+                '',
+                'life',
+                'family',
+                'sports',
+                'cars'
+            ]
+        ]);
     }
-    public function process_new_post()
+    public function process_new_post(Request $re)
     {
-        /*Process*/$success = true;//or false
-        if($success)
-        {
-            //store
-            return redirect('/posts/new/success');
-        }
-        else
-        {
-            return redirect('posts/new/false');
-        }
+        //Validate $re->input([''each''])
     }
     public function new_post_successful($successful)
     {
