@@ -19,7 +19,7 @@ Route::get('/', function(){
     return redirect('/welcome');
 });
 Route::get('welcome', function (){
-    $message='This is a daily message!';
+    $message="The only thing that stands between you and success is your will to thrive";
     return view('welcome', ['message'=>$message]);
 });
 
