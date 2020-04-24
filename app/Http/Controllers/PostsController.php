@@ -36,16 +36,25 @@ class PostsController extends Controller
     }
     public function process_new_post(Request $re)
     {
-        //Validate $re->input([''each''])
+        $val = $re->validate([
+            'tag' => 'required|max:255',
+            'heading' => 'required|max:255',
+            'description' => 'required|max:5000'
+        ]);
+        $c = new \App\Posts(); 
+        $c->category = $val['tag'];
+        $c->heading = $val['heading'];
+        $c->description = $val['description'];
+        $c->author = "Joe Shmoe";//will be set with session in the future
+        $c->replies = '{}';
+        $c->save();
+        $id = $c->id;
+        return redirect('/posts/new/success/'.$id);
+
     }
-    public function new_post_successful($successful)
+    public function new_post_successful($id)
     {
-        if($successful){
-            return 'Posted!';
-        }else{
-            $error = '';
-            redirect('/posts/new/', ['error', $error]);
-        }
+        return "Find your post <a href='/posts/singular/".$id."'>here</a>";
     }
     public function view_by_tag($tag)
     {
